@@ -1,7 +1,9 @@
 package com.example.demo.Entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 
 @Document(collection = "students")
 public class Student {
@@ -10,6 +12,8 @@ public class Student {
     private String _id;
     private String studentname;
     private String studentaddress;
+    
+    @Indexed(unique = true)
     private String mobile;
 
 
