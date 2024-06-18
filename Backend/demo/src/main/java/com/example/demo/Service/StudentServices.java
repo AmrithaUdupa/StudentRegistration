@@ -34,6 +34,14 @@ public class StudentServices {
     public Student getStudentByID(String studentid) {
         return repo.findById(studentid).orElse(null);
     }
-    
-   
+
+    public boolean authenticate(String studentname, String studentpassword) {
+        Student student = repo.findByStudentname(studentname);
+        
+        // Check if student exists and compare passwords
+        if (student != null && student.getStudentpassword().equals(studentpassword)) {
+            return true; // Authentication successful
+        }
+        return false; // Authentication failed
+    }
 }
