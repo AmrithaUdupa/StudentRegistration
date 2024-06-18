@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-student',
-  templateUrl: './student.component.html',
-  styleUrls: ['./student.component.scss']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrl: './registration.component.css'
 })
-export class StudentComponent implements OnInit {
-
+export class RegistrationComponent {
   StudentArray: any[] = [];
   studentname: string = "";
   studentpassword: string = "";
@@ -140,4 +139,5 @@ export class StudentComponent implements OnInit {
     this.mobile = 0;
     this.currentStudentID = '';
   }
+
 }

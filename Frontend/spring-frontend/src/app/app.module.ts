@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'; // Updated import
 
 import { AppComponent } from './app.component';
-import { StudentComponent } from './student/student.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentComponent
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
