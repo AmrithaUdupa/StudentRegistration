@@ -10,7 +10,7 @@ export class StudentComponent implements OnInit {
 
   StudentArray: any[] = [];
   studentname: string = "";
-  studentaddress: string = "";
+  studentpassword: string = "";
   mobile: number = 0;
   currentStudentID: string = "";
 
@@ -29,7 +29,7 @@ export class StudentComponent implements OnInit {
     // creates a constant object bodyData which includes current value of student details from the component
     const bodyData = {
       studentname: this.studentname,
-      studentaddress: this.studentaddress,
+      studentpassword: this.studentpassword,
       mobile: this.mobile
     };
     console.log('Registering student with data:', bodyData);
@@ -70,7 +70,7 @@ export class StudentComponent implements OnInit {
   setUpdate(data: any) {
     console.log('Setting student for update:', data);
     this.studentname = data.studentname;
-    this.studentaddress = data.studentaddress;
+    this.studentpassword = data.studentpassword;
     this.mobile = data.mobile;
     this.currentStudentID = data._id;
   }
@@ -78,7 +78,7 @@ export class StudentComponent implements OnInit {
   updateRecords() {
     const bodyData = {
       studentname: this.studentname,
-      studentaddress: this.studentaddress,
+      studentpassword: this.studentpassword,
       mobile: this.mobile
     };
 
@@ -125,7 +125,7 @@ export class StudentComponent implements OnInit {
   clearForm() {
     console.log('Clearing form');
     this.studentname = '';
-    this.studentaddress = '';
+    this.studentpassword = '';
     this.mobile = 0;
     this.currentStudentID = '';
   }

@@ -2,6 +2,7 @@ package com.example.demo.Service;
 
 import com.example.demo.Entity.Student;
 import com.example.demo.Repository.StudentRepo;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,13 @@ public class StudentServices {
     private StudentRepo repo;
 
     public void saveOrUpdate(Student student) {
-    	
+    	try {
+    		repo.save(student);
+        } catch (DuplicateKeyException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new RuntimeException("Error saving student", e);
+        }
         repo.save(student);
     }
 

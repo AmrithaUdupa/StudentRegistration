@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.Entity.Student;
@@ -35,7 +34,12 @@ public class StudentController {
             studentServices.saveOrUpdate(student);
             return ResponseEntity.ok("Student saved successfully!");
         } catch (DuplicateKeyException e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Duplicate mobile number: " + student.getMobile());
+            if (e.getMessage().contains("studentname_1_studentpassword_1")) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("Duplicate username and password combination: " + student.getStudentpassword());
+            } else if (e.getMessage().contains("mobile_1")) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("Duplicate mobile number: " + student.getMobile());
+            }
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Duplicate key error: " + e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error saving student: " + e.getMessage());
         }

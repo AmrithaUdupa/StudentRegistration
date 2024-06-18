@@ -11,7 +11,7 @@ public class Student {
     @Id
     private String _id;
     private String studentname;
-    private String studentaddress;
+    private String studentpassword;
     
     @Indexed(unique = true)
     private String mobile;
@@ -20,17 +20,17 @@ public class Student {
     public Student() {}
 
 
-    public Student(String studentname, String studentaddress, String mobile) {
+    public Student(String studentname, String studentpassword, String mobile) {
         this.studentname = studentname;
-        this.studentaddress = studentaddress;
+        this.studentpassword = studentpassword;
         this.mobile = mobile;
     }
 
     // Constructor for updating existing student
-    public Student(String _id, String studentname, String studentaddress, String mobile) {
+    public Student(String _id, String studentname, String studentpassword, String mobile) {
         this._id = _id;
         this.studentname = studentname;
-        this.studentaddress = studentaddress;
+        this.studentpassword = studentpassword;
         this.mobile = mobile;
     }
 
@@ -51,12 +51,12 @@ public class Student {
         this.studentname = studentname;
     }
 
-    public String getStudentaddress() {
-        return studentaddress;
+    public String getStudentpassword() {
+        return studentpassword;
     }
 
-    public void setStudentaddress(String studentaddress) {
-        this.studentaddress = studentaddress;
+    public void setStudentpassword(String studentpassword) {
+        this.studentpassword = studentpassword;
     }
 
     public String getMobile() {
@@ -72,7 +72,7 @@ public class Student {
         return "Student{" +
                 "_id='" + _id + '\'' +
                 ", studentname='" + studentname + '\'' +
-                ", studentaddress='" + studentaddress + '\'' +
+                ", studentpassword='" + studentpassword + '\'' +
                 ", mobile='" + mobile + '\'' +
                 '}';
     }
