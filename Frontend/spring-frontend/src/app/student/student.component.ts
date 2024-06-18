@@ -47,6 +47,17 @@ export class StudentComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error registering student:', error);
+        if (error.status === 409) {
+          if (error.error.includes('Duplicate mobile number')) {
+            alert('Duplicate Mobile number');
+          } else if (error.error.includes('Duplicate username and password combination')) {
+            alert('Duplicate username and password combination');
+          } else {
+            alert('Duplicate key error: ' + error.error);
+          }
+        } else {
+          alert('Error saving student: ' + error.message);
+        }
       }
     });
   }
