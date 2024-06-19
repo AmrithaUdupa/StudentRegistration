@@ -1,0 +1,33 @@
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: var(--secondary-color);
+    margin-top: 1rem;
+    margin-right: 2rem;
+    text-decoration-color: white;
+  }
+  
+  .navbar-expand-lg .navbar-nav .nav-link.active-link {
+    color: var(--primary-color);
+  }
+  .navbar-text {
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+    white-space: nowrap;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    font-weight: 500;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181, 181, 181);
+  }
+  .container-fluid {
+    position: fixed;
+    background-color: white;
+    height: 5rem;
+    border: 0.2px solid rgba(128, 128, 128, 0.192);
+    margin-top: 3rem;
+  }
+  
